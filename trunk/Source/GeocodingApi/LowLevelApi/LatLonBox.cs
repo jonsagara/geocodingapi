@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace GeocodingApi
+namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	public class LatLonBox
+	internal class LatLonBox
 	{
 		public double North { get; set; }
 		public double South { get; set; }

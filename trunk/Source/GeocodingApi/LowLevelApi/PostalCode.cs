@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace GeocodingApi
+namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	public class PostalCode
+	internal class PostalCode
 	{
 		public string PostalCodeNumber { get; set; }
 	}

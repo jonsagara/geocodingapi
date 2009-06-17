@@ -51,21 +51,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddressDetails.cs" />
-    <Compile Include="AdministrativeArea.cs" />
-    <Compile Include="Country.cs" />
-    <Compile Include="ExtendedData.cs" />
+    <Compile Include="LowLevelApi\AddressDetails.cs" />
+    <Compile Include="LowLevelApi\AdministrativeArea.cs" />
+    <Compile Include="LowLevelApi\Country.cs" />
+    <Compile Include="LowLevelApi\ExtendedData.cs" />
     <Compile Include="Geocoding.cs" />
-    <Compile Include="GeocodingRequest.cs" />
-    <Compile Include="GeocodingResult.cs" />
-    <Compile Include="GeocodingResultStatus.cs" />
-    <Compile Include="LatLonBox.cs" />
-    <Compile Include="Locality.cs" />
-    <Compile Include="Placemark.cs" />
-    <Compile Include="Point.cs" />
-    <Compile Include="PostalCode.cs" />
+    <Compile Include="LowLevelApi\GeocodingRequest.cs" />
+    <Compile Include="LowLevelApi\GeocodingResult.cs" />
+    <Compile Include="LowLevelApi\GeocodingResultStatus.cs" />
+    <Compile Include="LowLevelApi\LatLonBox.cs" />
+    <Compile Include="LowLevelApi\Locality.cs" />
+    <Compile Include="LowLevelApi\Placemark.cs" />
+    <Compile Include="LowLevelApi\Point.cs" />
+    <Compile Include="LowLevelApi\PostalCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Thoroughfare.cs" />
+    <Compile Include="LowLevelApi\Thoroughfare.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

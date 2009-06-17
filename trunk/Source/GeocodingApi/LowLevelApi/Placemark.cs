@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace GeocodingApi
+namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	public class Placemark
+	internal class Placemark
 	{
 		public string Id { get; set; }
 		public string Address { get; set; }

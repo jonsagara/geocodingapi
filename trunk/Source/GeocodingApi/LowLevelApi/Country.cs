@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace GeocodingApi
+namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	public class Country
+	internal class Country
 	{
 		public string CountryNameCode { get; set; }
 		public string CountryName { get; set; }

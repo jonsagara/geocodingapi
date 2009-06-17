@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace GeocodingApi
+namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	public class Point
+	internal class Point
 	{
 		public double[] Coordinates { get; set; }
 	}
