@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using System.Configuration;
 
+using GeocodingApi.LowLevelApi;
+
 namespace GeocodingApi
 {
-	public class Geocoding
+	/// <summary>
+	/// Wrapper for returning results from Google's Geocoding API.
+	/// </summary>
+	public static class Geocoding
 	{
+		#region Instance Properties
+
 		private static string ApiKey
 		{
 			get
@@ -20,14 +27,22 @@ namespace GeocodingApi
 			}
 		}
 
+		#endregion
 
-		public static GeocodingResult GeocodeAddress(string address)
+
+#warning TODO: return a list of Placemark objects.
+		public static object GeocodeAddress(string address)
+		{
+			return GeocodeAddress(address, false);
+		}
+
+		public static object GeocodeAddress(string address, bool sensor)
 		{
 			var requestParams = new Dictionary<string, string>
 			{
 				{"q", address},
 				{"key", ApiKey},
-				{"sensor", "false"},
+				{"sensor", sensor.ToString().ToLower()},
 				{"output", "json"},
 				{"oe", "utf8"}
 			};

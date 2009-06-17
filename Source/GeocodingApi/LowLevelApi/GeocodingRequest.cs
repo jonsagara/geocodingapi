@@ -8,9 +8,9 @@ using System.Web;
 
 using Newtonsoft.Json;
 
-namespace GeocodingApi
+namespace GeocodingApi.LowLevelApi
 {
-	public class GeocodingRequest
+	internal class GeocodingRequest
 	{
 		#region Class Properties
 

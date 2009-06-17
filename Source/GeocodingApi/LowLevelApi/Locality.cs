@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace GeocodingApi
+namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	public class Locality
+	internal class Locality
 	{
 		public string LocalityName { get; set; }
 		public Thoroughfare Thoroughfare { get; set; }

@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace GeocodingApi
+namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	public class AddressDetails
+	internal class AddressDetails
 	{
 		public Country Country { get; set; }
 		public int Accuracy { get; set; }
