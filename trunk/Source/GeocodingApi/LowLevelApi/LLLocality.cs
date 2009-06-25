@@ -3,10 +3,10 @@
 namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	internal class Locality
+	internal class LLLocality
 	{
 		public string LocalityName { get; set; }
-		public Thoroughfare Thoroughfare { get; set; }
-		public PostalCode PostalCode { get; set; }
+		public LLThoroughfare Thoroughfare { get; set; }
+		public LLPostalCode PostalCode { get; set; }
 	}
 }

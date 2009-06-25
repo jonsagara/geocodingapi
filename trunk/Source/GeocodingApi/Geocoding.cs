@@ -47,7 +47,7 @@ namespace GeocodingApi
 				{"oe", "utf8"}
 			};
 
-			return GeocodingRequest.Execute(requestParams);
+			return LLGeocodingRequest.Execute(requestParams);
 		}
 	}
 }

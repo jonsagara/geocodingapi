@@ -3,10 +3,10 @@
 namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	internal class Country
+	internal class LLCountry
 	{
 		public string CountryNameCode { get; set; }
 		public string CountryName { get; set; }
-		public AdministrativeArea AdministrativeArea { get; set; }
+		public LLAdministrativeArea AdministrativeArea { get; set; }
 	}
 }

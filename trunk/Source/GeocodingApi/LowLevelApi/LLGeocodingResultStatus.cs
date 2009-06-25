@@ -3,7 +3,7 @@
 namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	internal class GeocodingResultStatus
+	internal class LLGeocodingResultStatus
 	{
 		public int Code { get; set; }
 		public string Request { get; set; }

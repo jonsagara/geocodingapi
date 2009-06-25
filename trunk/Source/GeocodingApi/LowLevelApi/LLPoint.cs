@@ -3,8 +3,8 @@
 namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	internal class PostalCode
+	internal class LLPoint
 	{
-		public string PostalCodeNumber { get; set; }
+		public double[] Coordinates { get; set; }
 	}
 }

@@ -3,7 +3,7 @@
 namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	internal class LatLonBox
+	internal class LLLatLonBox
 	{
 		public double North { get; set; }
 		public double South { get; set; }

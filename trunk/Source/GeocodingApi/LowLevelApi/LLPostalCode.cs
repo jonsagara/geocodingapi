@@ -3,8 +3,8 @@
 namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	internal class Thoroughfare
+	internal class LLPostalCode
 	{
-		public string ThoroughfareName { get; set; }
+		public string PostalCodeNumber { get; set; }
 	}
 }
