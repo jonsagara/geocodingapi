@@ -10,15 +10,20 @@ using Newtonsoft.Json;
 
 namespace GeocodingApi.LowLevelApi
 {
-	internal class GeocodingRequest
+	internal class LLGeocodingRequest
 	{
 		#region Class Properties
 
-		public static string ApiUrl
+		/// <summary>
+		/// The base API URL, up to and including the query string question mark.  The parameters 
+		/// will be appended as query string parameters.
+		/// </summary>
+		private static string ApiUrl
 		{
 			get
 			{
 				string apiUrl = ConfigurationManager.AppSettings["GeocodingApi.Url"];
+
 				if (string.IsNullOrEmpty(apiUrl))
 				{
 					throw new ArgumentException("Missing GeocodingApi.Url from config file.  This should be \"http://maps.google.com/maps/geo?\"");
@@ -36,7 +41,12 @@ namespace GeocodingApi.LowLevelApi
 		#endregion
 
 
-		public static GeocodingResult Execute(IDictionary<string, string> requestParams)
+		/// <summary>
+		/// Call the geocoding API with the given request parameters.
+		/// </summary>
+		/// <param name="requestParams"></param>
+		/// <returns></returns>
+		internal static LLGeocodingResult Execute(IDictionary<string, string> requestParams)
 		{
 			string requestUrl = GetRequestUrl(requestParams);
 			HttpWebRequest req = WebRequest.Create(requestUrl) as HttpWebRequest;
@@ -50,10 +60,15 @@ namespace GeocodingApi.LowLevelApi
 			using (StreamReader respReader = new StreamReader(resp.GetResponseStream()))
 			{
 				string jsonResponse = respReader.ReadToEnd();
-				return JsonConvert.DeserializeObject<GeocodingResult>(jsonResponse);
+				return JsonConvert.DeserializeObject<LLGeocodingResult>(jsonResponse);
 			}
 		}
 
+		/// <summary>
+		/// Constructs the request URL using the provided dictionary of request parameters.
+		/// </summary>
+		/// <param name="requestParams"></param>
+		/// <returns></returns>
 		private static string GetRequestUrl(IDictionary<string, string> requestParams)
 		{
 			StringBuilder qsParams = new StringBuilder();

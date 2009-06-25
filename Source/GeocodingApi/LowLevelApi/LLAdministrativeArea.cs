@@ -3,9 +3,9 @@
 namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	internal class AdministrativeArea
+	internal class LLAdministrativeArea
 	{
 		public string AdministrativeAreaName { get; set; }
-		public Locality Locality { get; set; }
+		public LLLocality Locality { get; set; }
 	}
 }

@@ -3,8 +3,8 @@
 namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	internal class ExtendedData
+	internal class LLExtendedData
 	{
-		public LatLonBox LatLonBox { get; set; }
+		public LLLatLonBox LatLonBox { get; set; }
 	}
 }

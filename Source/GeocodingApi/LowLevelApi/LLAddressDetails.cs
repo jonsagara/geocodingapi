@@ -3,9 +3,9 @@
 namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	internal class AddressDetails
+	internal class LLAddressDetails
 	{
-		public Country Country { get; set; }
+		public LLCountry Country { get; set; }
 		public int Accuracy { get; set; }
 	}
 }

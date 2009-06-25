@@ -3,8 +3,8 @@
 namespace GeocodingApi.LowLevelApi
 {
 	[Serializable]
-	internal class Point
+	internal class LLThoroughfare
 	{
-		public double[] Coordinates { get; set; }
+		public string ThoroughfareName { get; set; }
 	}
 }
