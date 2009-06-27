@@ -30,11 +30,22 @@ namespace GeocodingApi
 		#endregion
 
 
+		/// <summary>
+		/// Obtain the geographic coordinates of the specified address.
+		/// </summary>
+		/// <param name="address"></param>
+		/// <returns></returns>
 		public static List<Placemark> GeocodeAddress(string address)
 		{
 			return GeocodeAddress(address, false);
 		}
 
+		/// <summary>
+		/// Obtain the geographic coordinates of the specified address.
+		/// </summary>
+		/// <param name="address"></param>
+		/// <param name="sensor">Use of the Google Maps API now requires that you indicate whether your application is using a sensor (such as a GPS locator) to determine the user's location.  Applications that determine the user's location via a sensor must true.</param>
+		/// <returns></returns>
 		public static List<Placemark> GeocodeAddress(string address, bool sensor)
 		{
 			var requestParams = new Dictionary<string, string>
