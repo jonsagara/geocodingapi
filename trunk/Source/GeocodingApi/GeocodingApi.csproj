@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
+    <Compile Include="LatLonAlt.cs" />
+    <Compile Include="LatLonBox.cs" />
     <Compile Include="LowLevelApi\LLAddressDetails.cs" />
     <Compile Include="LowLevelApi\LLAdministrativeArea.cs" />
     <Compile Include="LowLevelApi\LLCountry.cs" />
@@ -71,6 +74,7 @@
     <Compile Include="LowLevelApi\LLPoint.cs" />
     <Compile Include="LowLevelApi\LLPostalCode.cs" />
     <Compile Include="LowLevelApi\LLThoroughfare.cs" />
+    <Compile Include="Placemark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
