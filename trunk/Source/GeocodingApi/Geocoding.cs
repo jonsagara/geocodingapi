@@ -49,8 +49,14 @@ namespace GeocodingApi
 			return ReadResult(LLGeocodingRequest.Execute(requestParams));
 		}
 
+
+		#region Helpers
+
 		private static List<Placemark> ReadResult(LLGeocodingResult result)
 		{
+			if (result.Placemark == null)
+				return new List<Placemark>();
+
 			List<Placemark> placemarks = new List<Placemark>(result.Placemark.Length);
 
 			foreach (LLPlacemark llPlacemark in result.Placemark)
@@ -59,23 +65,9 @@ namespace GeocodingApi
 				{
 					PlacemarkId = llPlacemark.Id,
 					FormattedAddress = llPlacemark.Address,
-
 					Address = ReadAddress(llPlacemark.AddressDetails),
-
-					BoundedArea = new LatLonBox
-					{
-						North = llPlacemark.ExtendedData.LatLonBox.North,
-						South = llPlacemark.ExtendedData.LatLonBox.South,
-						East = llPlacemark.ExtendedData.LatLonBox.East,
-						West = llPlacemark.ExtendedData.LatLonBox.West
-					},
-
-					Point = new LatLonAlt
-					{
-						Latitude = llPlacemark.Point.Coordinates[1],
-						Longitude = llPlacemark.Point.Coordinates[0],
-						Altitude = llPlacemark.Point.Coordinates[2]
-					}
+					BoundedArea = ReadBoundedArea(llPlacemark.ExtendedData),
+					Point = ReadPoint(llPlacemark.Point)
 				};
 
 				placemarks.Add(placemark);
@@ -89,16 +81,70 @@ namespace GeocodingApi
 			if (llAddressDetails == null)
 				return null;
 
-			return new Address
+			Address address = new Address
 			{
-				Street = llAddressDetails.Country.AdministrativeArea.Locality.Thoroughfare.ThoroughfareName,
-				City = llAddressDetails.Country.AdministrativeArea.Locality.LocalityName,
-				State = llAddressDetails.Country.AdministrativeArea.AdministrativeAreaName,
-				PostalCode = llAddressDetails.Country.AdministrativeArea.Locality.PostalCode.PostalCodeNumber,
-				Country = llAddressDetails.Country.CountryName,
-				CountryCode = llAddressDetails.Country.CountryNameCode,
 				Accuracy = llAddressDetails.Accuracy
 			};
+
+			if (llAddressDetails.Country != null)
+			{
+				address.Country = llAddressDetails.Country.CountryName;
+				address.CountryCode = llAddressDetails.Country.CountryNameCode;
+
+				if (llAddressDetails.Country.AdministrativeArea != null)
+				{
+					address.State = llAddressDetails.Country.AdministrativeArea.AdministrativeAreaName;
+
+					if (llAddressDetails.Country.AdministrativeArea.Locality != null)
+					{
+						address.City = llAddressDetails.Country.AdministrativeArea.Locality.LocalityName;
+
+						if (llAddressDetails.Country.AdministrativeArea.Locality.PostalCode != null)
+						{
+							address.PostalCode = llAddressDetails.Country.AdministrativeArea.Locality.PostalCode.PostalCodeNumber;
+						}
+
+						if (llAddressDetails.Country.AdministrativeArea.Locality.Thoroughfare != null)
+						{
+							address.Street = llAddressDetails.Country.AdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
+						}
+					}
+				}
+			}
+
+			return address;
 		}
+
+		private static LatLonBox ReadBoundedArea(LLExtendedData llExtendedData)
+		{
+			if (llExtendedData == null)
+				return null;
+
+			if (llExtendedData.LatLonBox == null)
+				return null;
+
+			return new LatLonBox
+			{
+				North = llExtendedData.LatLonBox.North,
+				South = llExtendedData.LatLonBox.South,
+				East = llExtendedData.LatLonBox.East,
+				West = llExtendedData.LatLonBox.West
+			};
+		}
+
+		private static LatLonAlt ReadPoint(LLPoint llPoint)
+		{
+			if (llPoint == null)
+				return null;
+
+			return new LatLonAlt
+			{
+				Latitude = llPoint.Coordinates[1],
+				Longitude = llPoint.Coordinates[0],
+				Altitude = llPoint.Coordinates[2]
+			};
+		}
+
+		#endregion
 	}
 }
