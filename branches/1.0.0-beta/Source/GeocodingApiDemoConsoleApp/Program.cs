@@ -11,8 +11,8 @@ namespace GeocodingApiDemoConsoleApp
 	{
 		static void Main(string[] args)
 		{
-			List<Placemark> placemarks = Geocoding.GeocodeAddress("1600 Amphitheatre Parkway, Mountain View, CA 94043");
-			placemarks.ForEach(placemark => Console.WriteLine(placemark.Point));
+			List<GeographicCoordinate> coords = Geocoding.GeocodeAddress("1600 Amphitheatre Parkway, Mountain View, CA 94043");
+			coords.ForEach(coord => Console.WriteLine(coord));
 
 #if DEBUG
 			Console.WriteLine("Press ENTER to quit the application");
