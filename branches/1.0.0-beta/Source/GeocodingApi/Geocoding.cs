@@ -54,7 +54,7 @@ namespace GeocodingApi
 			{
 				{"q", address},
 				{"key", ApiKey},
-				{"sensor", sensor.ToString().ToLower()},
+				{"sensor", sensor.ToString().ToLowerInvariant()},
 				{"output", "json"},
 				{"oe", "utf8"}
 			};
