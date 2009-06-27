@@ -11,8 +11,28 @@ namespace GeocodingApiDemoConsoleApp
 	{
 		static void Main(string[] args)
 		{
-			List<GeographicCoordinate> coords = Geocoding.GeocodeAddress("1600 Amphitheatre Parkway, Mountain View, CA 94043");
-			coords.ForEach(coord => Console.WriteLine(coord));
+			string address = "1600 Amphitheatre Parkway, Mountain View, CA 94043";
+			List<GeographicCoordinate> coords = Geocoding.GeocodeAddress(address);
+
+			Console.WriteLine("Coordinates for address \"{0}\":", address);
+			if (coords.Count == 0)
+			{
+				Console.WriteLine("\tNone returned for this address");
+			}
+			else
+			{
+				coords.ForEach(
+					coord =>
+					{
+						Console.WriteLine(
+							"\t* Latitude: {0}, Longitude: {1}, Altitude: {2}",
+							coord.Latitude,
+							coord.Longitude,
+							coord.Altitude
+							);
+					}
+					);
+			}
 
 #if DEBUG
 			Console.WriteLine("Press ENTER to quit the application");
