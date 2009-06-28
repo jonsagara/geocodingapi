@@ -12,7 +12,7 @@ namespace GeocodingApiDemoConsoleApp
 		static void Main(string[] args)
 		{
 			string address = "1600 Amphitheatre Parkway, Mountain View, CA 94043";
-			List<GeographicCoordinate> coords = Geocoding.GeocodeAddress(address);
+			List<GeographicCoordinate> coords = Geocoding.Geocode(address);
 
 			Console.WriteLine("Coordinates for address \"{0}\":", address);
 			if (coords.Count == 0)

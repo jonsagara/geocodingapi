@@ -36,9 +36,9 @@ namespace GeocodingApi
 		/// </summary>
 		/// <param name="address"></param>
 		/// <returns></returns>
-		public static List<GeographicCoordinate> GeocodeAddress(string address)
+		public static List<GeographicCoordinate> Geocode(string address)
 		{
-			return GeocodeAddress(address, false);
+			return Geocode(address, false);
 		}
 
 		/// <summary>
@@ -48,7 +48,7 @@ namespace GeocodingApi
 		/// <param name="address"></param>
 		/// <param name="sensor">Use of the Google Maps API now requires that you indicate whether your application is using a sensor (such as a GPS locator) to determine the user's location.  Applications that determine the user's location via a sensor must true.</param>
 		/// <returns></returns>
-		public static List<GeographicCoordinate> GeocodeAddress(string address, bool sensor)
+		public static List<GeographicCoordinate> Geocode(string address, bool sensor)
 		{
 			var requestParams = new Dictionary<string, string>
 			{
