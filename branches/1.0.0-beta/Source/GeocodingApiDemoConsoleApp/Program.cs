@@ -23,14 +23,12 @@ namespace GeocodingApiDemoConsoleApp
 			{
 				coords.ForEach(
 					coord =>
-					{
 						Console.WriteLine(
 							"\t* Latitude: {0}, Longitude: {1}, Altitude: {2}",
 							coord.Latitude,
 							coord.Longitude,
 							coord.Altitude
-							);
-					}
+							)
 					);
 			}
 
