@@ -75,14 +75,12 @@ namespace GeocodingApi
 
 			foreach (LLPlacemark llPlacemark in result.Placemark)
 			{
-				GeographicCoordinate coord = new GeographicCoordinate
+				coords.Add(new GeographicCoordinate
 				{
 					Latitude = llPlacemark.Point.Coordinates[1],
 					Longitude = llPlacemark.Point.Coordinates[0],
 					Altitude = llPlacemark.Point.Coordinates[2]
-				};
-
-				coords.Add(coord);
+				});
 			}
 
 			return coords;
