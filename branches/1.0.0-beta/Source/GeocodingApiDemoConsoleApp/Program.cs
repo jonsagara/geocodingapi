@@ -30,15 +30,13 @@ namespace GeocodingApiDemoConsoleApp
 
 		static void Main(string[] args)
 		{
-			Addresses.ForEach(
-				address =>
-				{
-					Geocoding.Geocode(address)
-						.ForEach(coordinate => DisplayCoordinate(coordinate, address));
+			foreach (string address in Addresses)
+			{
+				Geocoding.Geocode(address)
+					.ForEach(coordinate => DisplayCoordinate(coordinate, address));
 
-					Thread.Sleep(DelayInMs);
-				}
-			);
+				Thread.Sleep(DelayInMs);
+			}
 
 			#region DEBUG only
 #if DEBUG
