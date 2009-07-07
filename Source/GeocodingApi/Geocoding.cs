@@ -11,7 +11,7 @@ namespace GeocodingApi
 	/// </summary>
 	public static class Geocoding
 	{
-		#region Instance Properties
+		#region Class Properties
 
 		private static string ApiKey
 		{
