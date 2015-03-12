@@ -8,7 +8,7 @@ Simply put, the API exposes a method that takes an address string as input and r
 
 There are some restrictions on usage of Google's geocoding service, most notably the following:
 
-> Note: the geocoding service may only be used in conjunction with displaying results on a Google map; geocoding results without displaying them on a map is prohibited.
+> No Use of Content without a Google Map. You must not use or display the Content without a corresponding Google map, unless you are explicitly permitted to do so in the Maps APIs Documentation. In any event, you must not use or display the Content on or in conjunction with a non-Google map. For example, you must not use geocodes obtained through the Service in conjunction with a non-Google map. As another example, you must not display Street View imagery alongside a non-Google map, but you may display Street View imagery without a corresponding Google map because the Maps APIs Documentation explicitly permits you to do so.
 
 More information is available at [Maps API Terms of Service License Restrictions](https://developers.google.com/maps/terms?csw=1#section_10_12).
 
