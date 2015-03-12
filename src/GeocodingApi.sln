@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeocodingApi", "GeocodingApi\GeocodingApi.csproj", "{1F0167DE-E6FD-47A2-B11D-77E0E9A73201}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeocodingApiDemoConsoleApp", "GeocodingApiDemoConsoleApp\GeocodingApiDemoConsoleApp.csproj", "{B7DA6091-5052-46F2-BFB8-176985A3EF2A}"
